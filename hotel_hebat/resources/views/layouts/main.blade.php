@@ -31,24 +31,37 @@
   </div>
 </header>
 
-{{-- Jumbotron --}}
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
- <div class="carousel-inner">
-   <div class="carousel-item active ">
-     <img src="{{ asset('img/gambar_1.png') }}" class="d-block w-100">
-   </div>
-   <div class="carousel-item">
-     <img src="{{ asset('img/gambar_2.png') }}" class="d-block w-100">
-   </div>
- </div>
- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Previous</span>
- </button>
- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Next</span>
- </button>
+{{-- Table --}}
+<div class="container">
+<table class="table mt-5">
+ <thead class="table-dark">
+   <tr>
+     <th scope="col">#</th>
+     <th scope="col">First</th>
+     <th scope="col">Last</th>
+     <th scope="col">Handle</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <th scope="row">1</th>
+     <td>Mark</td>
+     <td>Otto</td>
+     <td>@mdo</td>
+   </tr>
+   <tr>
+     <th scope="row">2</th>
+     <td>Jacob</td>
+     <td>Thornton</td>
+     <td>@fat</td>
+   </tr>
+   <tr>
+     <th scope="row">3</th>
+     <td colspan="2">Larry the Bird</td>
+     <td>@twitter</td>
+   </tr>
+ </tbody>
+</table>
 </div>
 @yield('content')
 
