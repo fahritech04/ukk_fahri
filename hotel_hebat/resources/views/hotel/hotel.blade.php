@@ -8,18 +8,18 @@
 <form class="row gx-3 gy-2 align-items-center mt-5">
  <div class="col">
    <label class="visually-hidden" for="">Tanggal Check In</label>
-   <input type="text" class="form-control" placeholder="Jane Doe">
+   <input type="text" class="form-control" placeholder="Tanggal Check In">
  </div>
  <div class="col">
    <label class="visually-hidden" for="">Tanggal Check Out</label>
-   <input type="text" class="form-control" placeholder="Jane Doe">
+   <input type="text" class="form-control" placeholder="Tanggal Check Out">
  </div>
  <div class="col">
    <label class="visually-hidden" for="">Jumlah Kamar</label>
-   <input type="text" class="form-control" placeholder="Jane Doe">
+   <input type="text" class="form-control" placeholder="Jumlah Kamar">
  </div>
  <div class="col-auto">
-  <a href="#" class="btn btn-primary">Submit</a>
+  <a href="{{ route('pesan.index') }}" class="btn btn-primary">Pesan</a>
  </div>
 </form>
 
@@ -34,4 +34,5 @@
 </figure>
 
 </div>
+@yield('hotel')
 @endsection

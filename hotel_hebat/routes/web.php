@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::get('/', function () {
 Route::resource('hotel', HotelController::class);
 Route::resource('fasilitas', FacilityController::class);
 Route::resource('kamar', RoomController::class);
+Route::resource('pesan', OrderController::class);
