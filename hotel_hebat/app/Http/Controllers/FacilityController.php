@@ -24,7 +24,7 @@ class FacilityController extends Controller
      */
     public function create()
     {
-        //
+        return view('facility.add_fasilitas');
     }
 
     /**
