@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\Receptionist;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ReceptionistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('hotel.add_hotel');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\Receptionist  $receptionist
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show(Receptionist $receptionist)
     {
         //
     }
@@ -52,10 +52,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\Receptionist  $receptionist
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit(Receptionist $receptionist)
     {
         //
     }
@@ -64,10 +64,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\Receptionist  $receptionist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, Receptionist $receptionist)
     {
         //
     }
@@ -75,10 +75,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Admin  $admin
+     * @param  \App\Models\Receptionist  $receptionist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy(Receptionist $receptionist)
     {
         //
     }
