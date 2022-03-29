@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Receptionist;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ReceptionistController extends Controller
      */
     public function index()
     {
-        return view('resepsionis');
+        $data = Order::all();
+        return view('resepsionis', compact('data'));
     }
 
     /**

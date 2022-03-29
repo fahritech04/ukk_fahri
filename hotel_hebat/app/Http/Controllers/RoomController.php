@@ -57,9 +57,10 @@ class RoomController extends Controller
      * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room)
+    public function edit($id)
     {
-        //
+        $data = Room::find($id);
+        return view('room.editkamar', compact('data'));
     }
 
     /**
@@ -69,9 +70,10 @@ class RoomController extends Controller
      * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Room $room)
+    public function update(Request $request, $id)
     {
-        //
+        Room::find($id)->update($request->all());
+        return redirect('kamar');
     }
 
     /**

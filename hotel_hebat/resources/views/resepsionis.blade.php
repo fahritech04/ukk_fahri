@@ -11,7 +11,7 @@
   </div>
 
   {{-- table --}}
-  <table class="table">
+  <table class="table">    
     <thead class="table-dark">
       <tr>
         <th scope="col">No</th>
@@ -22,16 +22,18 @@
         <th scope="col">Tanggal Check Out</th>
       </tr>
     </thead>
+    @foreach ($data as $resepsionis)      
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <th scope="row">{{ $resepsionis->id }}</th>
+        <td>{{ $resepsionis->nama }}</td>
+        <td>{{ $resepsionis->email }}</td>
+        <td>{{ $resepsionis->no_hp }}</td>
+        <td>{{ $resepsionis->tanggal_checkin }}</td>
+        <td>{{ $resepsionis->tanggal_checkout }}</td>
       </tr>
     </tbody>
+    @endforeach
   </table>
 
 </div>

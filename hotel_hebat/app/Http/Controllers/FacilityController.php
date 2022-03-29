@@ -14,7 +14,8 @@ class FacilityController extends Controller
      */
     public function index()
     {
-        return view('fasilitas');
+        $data = Facility::all();
+        return view('fasilitas', compact('data'));
     }
 
     /**
@@ -24,7 +25,7 @@ class FacilityController extends Controller
      */
     public function create()
     {
-        
+        return view('fasilitas_hotel.addfasilitas');
     }
 
     /**
@@ -35,7 +36,8 @@ class FacilityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Facility::create($request->all());
+        return redirect()->route('fasilitas.index');
     }
 
     /**
@@ -55,9 +57,10 @@ class FacilityController extends Controller
      * @param  \App\Models\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function edit(Facility $facility)
+    public function edit($id)
     {
-        //
+        $data = Facility::find($id);
+        return view('fasilitas_hotel.editfasilitas', compact('data'));
     }
 
     /**
@@ -67,9 +70,10 @@ class FacilityController extends Controller
      * @param  \App\Models\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Facility $facility)
+    public function update(Request $request, $id)
     {
-        //
+        Facility::find($id)->update($request->all());
+        return redirect('fasilitas');
     }
 
     /**

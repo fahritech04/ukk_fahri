@@ -35,20 +35,20 @@
  <div class="card-header">
    Bukti Pemesanan - Hotel Hebat
  </div>
- @foreach ($data as $reservasi)  
  
  <div class="card-body">
+  @foreach ($data as $reservasi)  
    <h5 class="card-title">{{ $reservasi->nama }}</h5>
    <p class="card-text">{{ $reservasi->email }}</p>
    <p class="card-text">{{ $reservasi->no_hp }}</p>
    <p class="card-text">{{ $reservasi->id_kamar }}</p>
    <p class="card-text">{{ $reservasi->tanggal_checkin }}</p>
    <p class="card-text">{{ $reservasi->tanggal_checkout }}</p>
-   <p class="card-text">{{ $reservasi->jumlah_kamar }}</p>
-   <a href="#" class="btn btn-primary">Cetak</a>
+   <p class="card-text border-bottom mb-3">{{ $reservasi->jumlah_kamar }}</p>
+   @endforeach
+   <a href="" class="btn btn-primary">Cetak</a>
  </div>
 
- @endforeach
 </div>
 </div>
 
