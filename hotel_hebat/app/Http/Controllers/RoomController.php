@@ -14,7 +14,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        return view('room.kamar');
+        return view('kamar');
     }
 
     /**
@@ -24,7 +24,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('room.add_kamar');
+        
     }
 
     /**

@@ -36,10 +36,25 @@
  <div class="carousel-inner">
    <div class="carousel-item active ">
      <img src="{{ asset('img/gambar_2.png') }}" class="d-block w-100">
+     <div class="carousel-caption d-none d-md-block">
+      <h5>Hotel Hebat</h5>
+      <p>Nikmati berlibur bersama hotel hebat</p>
+       <a href="{{ route('pesan.index') }}" class="btn btn-primary">Pesan Sekarang</a>
+    </div>
    </div>
  </div>
 </div>
-@yield('content')
+
+<div class="container">
+  <figure class="text-center mt-5 border-top">
+    <blockquote class="blockquote mt-5">
+      <h2>Tentang Kami</h2>
+    </blockquote>
+    <figcaption class="blockquote-footer mt-3">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ut culpa vitae quas earum voluptatibus eum quae, harum veritatis dolorem amet praesentium alias dolorum assumenda non, delectus incidunt. Non maiores pariatur aspernatur autem, rem natus repudiandae vero. Hic, optio rerum impedit voluptas magni veniam laudantium beatae doloribus assumenda tempore quam architecto, recusandae exercitationem earum soluta nostrum repellendus alias accusantium eveniet voluptatem eum. Vero maxime soluta alias quia fuga deleniti nam, praesentium corporis suscipit illum tenetur tempore blanditiis dolorum accusantium rem temporibus ad quo, excepturi enim, voluptatem autem? Impedit fugiat vel reiciendis nam fuga facere voluptatibus, architecto nostrum similique. Sit, quos.</p>
+    </figcaption>
+   </figure>
+</div>
 
 {{-- footer --}}
 <div class="container mt-5">

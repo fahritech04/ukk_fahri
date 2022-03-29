@@ -14,7 +14,7 @@ class FacilityController extends Controller
      */
     public function index()
     {
-        return view('facility.fasilitas');
+        return view('fasilitas');
     }
 
     /**
@@ -24,7 +24,7 @@ class FacilityController extends Controller
      */
     public function create()
     {
-        return view('facility.add_fasilitas');
+        
     }
 
     /**

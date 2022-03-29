@@ -14,7 +14,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        return view('hotel.hotel');
+        return view('hotel');
     }
 
     /**
@@ -24,7 +24,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        return view('hotel.add_hotel');
+
     }
 
     /**
