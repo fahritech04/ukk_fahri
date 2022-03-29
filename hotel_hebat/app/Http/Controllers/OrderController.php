@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +15,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('order.order');
+        $data = Room::all();
+        return view('order.order', compact('data'));
     }
 
     /**
@@ -35,7 +37,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Order::create($request->all());
+        return redirect()->route('reservasi.index');
     }
 
     /**

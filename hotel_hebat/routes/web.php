@@ -5,6 +5,7 @@ use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReceptionistController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,4 @@ Route::resource('kamar', RoomController::class);
 Route::resource('pesan', OrderController::class);
 Route::resource('admin', AdminController::class);
 Route::resource('resepsionis', ReceptionistController::class);
+Route::resource('reservasi', ReservationController::class);

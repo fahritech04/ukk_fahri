@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room;
+use App\Models\Order;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
-class RoomController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $data = Room::all();
-        return view('kamar', compact('data'));
+        $data = Order::all();
+        return view('order.reservasi', compact('data'));
     }
 
     /**
@@ -25,7 +26,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('room.addkamar');
+        //
     }
 
     /**
@@ -36,17 +37,16 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        Room::create($request->all());
-        return redirect()->route('kamar.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show(Reservation $reservation)
     {
         //
     }
@@ -54,10 +54,10 @@ class RoomController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room)
+    public function edit(Reservation $reservation)
     {
         //
     }
@@ -66,10 +66,10 @@ class RoomController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Room $room)
+    public function update(Request $request, Reservation $reservation)
     {
         //
     }
@@ -77,10 +77,10 @@ class RoomController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy(Reservation $reservation)
     {
         //
     }
