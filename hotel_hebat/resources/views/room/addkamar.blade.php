@@ -13,6 +13,12 @@
    <form action="{{ route('kamar.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row mb-3">
+      <label class="col-sm-2 col-form-label">Input File</label>
+      <div class="col-sm-10">
+        <input type="file" class="form-control" name="foto">
+      </div>
+    </div>
+    <div class="row mb-3">
       <label class="col-sm-2 col-form-label">Tipe Kamar</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="tipe_kamar">

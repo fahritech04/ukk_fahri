@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room;
 use Illuminate\Http\Request;
 
-class RoomController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $data = Room::all();
-        return view('kamar', compact('data'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('room.addkamar');
+        //
     }
 
     /**
@@ -36,22 +34,16 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Room::create($request->all());
-        if($request->hasFile('foto')){
-            $request->file('foto')->move('fotokamar/', $request->file('foto')->getClientOriginalName());
-            $data->foto = $request->file('foto')->getClientOriginalName();
-            $data->save();
-        }
-        return redirect()->route('kamar.index')->with('success', 'Data Berhasil di tambahkan');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show($id)
     {
         //
     }
@@ -59,36 +51,46 @@ class RoomController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data = Room::find($id);
-        return view('room.editkamar', compact('data'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        Room::find($id)->update($request->all());
-        return redirect('kamar');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy($id)
     {
         //
+    }
+
+    public function hotel(){
+        return view('admin.hotel');
+    }
+
+    public function reservasi(){
+        return view('admin.reservasi');
+    }
+
+    public function resepsionis(){
+        return view('admin.resepsionis');
     }
 }

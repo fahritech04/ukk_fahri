@@ -15,6 +15,7 @@ class CreateFacilitiesTable extends Migration
     {
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
             $table->string('fasilitas_hotel');
             $table->string('keterangan');
             $table->timestamps();

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room;
+use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class RoomController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $data = Room::all();
-        return view('kamar', compact('data'));
+        return view('auth.login');
     }
 
     /**
@@ -25,7 +26,26 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('room.addkamar');
+        //
+    }
+
+
+    // Registrasi
+    public function registrasi(){
+        return view('auth.registrasi');
+    }
+
+    // Simpan Registrasi
+    public function simpanregistrasi(Request $request){
+        User::create([
+            'name' => $request->name,
+            'level' => $request->level,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(60),
+        ]);
+
+        return view('auth.login');
     }
 
     /**
@@ -36,22 +56,19 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Room::create($request->all());
-        if($request->hasFile('foto')){
-            $request->file('foto')->move('fotokamar/', $request->file('foto')->getClientOriginalName());
-            $data->foto = $request->file('foto')->getClientOriginalName();
-            $data->save();
-        }
-        return redirect()->route('kamar.index')->with('success', 'Data Berhasil di tambahkan');
+        if(Auth::attempt($request->only('email','password'))){
+            return redirect('/hotel');
+        }    
+        return redirect('login');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show($id)
     {
         //
     }
@@ -59,35 +76,33 @@ class RoomController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data = Room::find($id);
-        return view('room.editkamar', compact('data'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        Room::find($id)->update($request->all());
-        return redirect('kamar');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Room  $room
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy($id)
     {
         //
     }

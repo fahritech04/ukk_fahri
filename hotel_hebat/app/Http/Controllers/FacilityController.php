@@ -36,7 +36,12 @@ class FacilityController extends Controller
      */
     public function store(Request $request)
     {
-        Facility::create($request->all());
+        $data = Facility::create($request->all());
+        if($request->hasFile('gambar')){
+            $request->file('gambar')->move('gambarhotel/', $request->file('gambar')->getClientOriginalName());
+            $data->gambar = $request->file('gambar')->getClientOriginalName();
+            $data->save();
+        }
         return redirect()->route('fasilitas.index');
     }
 

@@ -12,12 +12,12 @@
   <div class="card-body">
    <form action="{{ route('fasilitas.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-    {{-- <div class="row mb-3">
-      <label for="formFile" class="col-sm-2 form-label">input gambar</label>
+    <div class="row mb-3">
+      <label class="col-sm-2 col-form-label">Input File</label>
       <div class="col-sm-10">
-       <input class="form-control" type="file" id="formFile">
+        <input type="file" class="form-control" name="gambar">
       </div>
-    </div> --}}
+    </div>
     <div class="row mb-3">
       <label class="col-sm-2 col-form-label">Fasilitas Hotel</label>
       <div class="col-sm-10">

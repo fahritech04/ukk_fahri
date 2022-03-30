@@ -46,7 +46,6 @@
    <p class="card-text">{{ $reservasi->tanggal_checkout }}</p>
    <p class="card-text border-bottom mb-3">{{ $reservasi->jumlah_kamar }}</p>
    @endforeach
-   <a href="" class="btn btn-primary">Cetak</a>
  </div>
 
 </div>
