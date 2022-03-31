@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -83,7 +84,8 @@ class AdminController extends Controller
     }
 
     public function hotel(){
-        return view('admin.hotel');
+        $data = Order::all();
+        return view('admin.hotel', compact('data'));
     }
 
     public function reservasi(){

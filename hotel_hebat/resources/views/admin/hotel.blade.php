@@ -30,6 +30,43 @@
   </div>
 </header>
 
-@yield('admin')
+{{-- table --}}
+<div class="container mt-5">
+<div class="card">
+  <div class="card-body">
+    <h1>Hotel</h1>
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Email</th>
+            <th scope="col">No Handphone</th>
+            <th scope="col">Tanggal Check In</th>
+            <th scope="col">Tanggal Check Out</th>
+            <th scope="col">Jumlah Kamar</th>
+          </tr>
+        </thead>
+        @foreach ($data as $hotel)
+        <tbody>
+          <tr>
+            <th scope="row">{{ $hotel->id }}</th>
+            <td>{{ $hotel->nama }}</td>
+            <td>{{ $hotel->email }}</td>
+            <td>{{ $hotel->no_hp }}</td>
+            <td>{{ $hotel->tanggal_checkin }}</td>
+            <td>{{ $hotel->tanggal_checkout }}</td>
+            <td>{{ $hotel->jumlah_kamar }}</td>
+          </tr>
+        </tbody>
+        @endforeach
+        
+      </table>
+  </div>
+</div>
+</div>
+
+
+
 </body>
 </html>
